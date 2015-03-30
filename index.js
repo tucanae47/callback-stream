@@ -24,6 +24,7 @@ function CallbackStream(options, callback) {
   })
 
   this.once("pipe", function(source) {
+    callback(null, this.results)
     source.on("error", callback);
   })
 }
